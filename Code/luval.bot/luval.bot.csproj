@@ -52,8 +52,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conversation.cs" />
+    <Compile Include="LuisRequest.cs" />
     <Compile Include="Models\ConfigModel.cs" />
+    <Compile Include="Models\LuisEntity.cs" />
     <Compile Include="Models\LuisIntent.cs" />
+    <Compile Include="Models\LuisQueryResult.cs" />
     <Compile Include="Models\LuisSession.cs" />
     <Compile Include="OrderConveration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -61,6 +64,9 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="private.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
