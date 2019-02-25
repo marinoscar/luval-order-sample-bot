@@ -15,7 +15,7 @@ namespace luval.bot.Models
             IsVerbose = GetSetting<bool>("luis.isverbose", true);
             TimeZoneOffset = GetSetting<short>("luis.tzoffset", -360);
             Key = GetSetting<string>("luis.key", key);
-            Endpoint = GetSetting<string>("luis.endpoint", "");
+            Endpoint = GetSetting<string>("luis.endpoint", "https://westus.api.cognitive.microsoft.com/luis/v2.0");
             AppId = GetSetting<string>("luis.appid", appId);
         }
         public LuisSession(string endpoint, string appId, string key)

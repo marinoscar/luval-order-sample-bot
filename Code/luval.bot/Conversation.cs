@@ -8,9 +8,11 @@ namespace luval.bot
 {
     public class Conversation
     {
-        private bool _isStaging;
-        private bool _isVersbose;
-        private int _tzOffset;
-        private string _key;
+        public Conversation(ILuisRequest request)
+        {
+            Request = request;
+        }
+
+        public ILuisRequest Request { get; private set; }
     }
 }
