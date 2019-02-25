@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A01D3869-BD60-4A8F-B262-D3AAB4B07E9A}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>luval.bot</RootNamespace>
-    <AssemblyName>luval.bot</AssemblyName>
+    <ProjectGuid>{31E16EE2-E474-4FEB-A122-AA2B3631FABE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>luval.bot.channel</RootNamespace>
+    <AssemblyName>luval.bot.channel</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,19 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="RestSharp, Version=100.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharpSigned.105.2.3\lib\net452\RestSharp.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Net" />
-    <Reference Include="System.Net.Http.WebRequest" />
-    <Reference Include="System.Runtime" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,24 +42,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conversations\Conversation.cs" />
-    <Compile Include="ILuisRequest.cs" />
-    <Compile Include="Interactions\OrderCancelInteraction.cs" />
-    <Compile Include="LuisRequest.cs" />
-    <Compile Include="LuisRequestException.cs" />
-    <Compile Include="Models\ConfigModel.cs" />
-    <Compile Include="Models\LuisEntity.cs" />
-    <Compile Include="Models\LuisEntityResolution.cs" />
-    <Compile Include="Models\LuisEntityResolutionValue.cs" />
-    <Compile Include="Models\LuisIntent.cs" />
-    <Compile Include="Models\LuisQueryResult.cs" />
-    <Compile Include="Models\LuisSession.cs" />
-    <Compile Include="Conversations\OrderConveration.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="packages.config" />
+    <None Include="App.config" />
+    <None Include="private.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\luval.bot\luval.bot.csproj">
+      <Project>{a01d3869-bd60-4a8f-b262-d3aab4b07e9a}</Project>
+      <Name>luval.bot</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

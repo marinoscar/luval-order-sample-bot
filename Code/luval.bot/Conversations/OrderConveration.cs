@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace luval.bot
+namespace luval.bot.Conversations
 {
     public class OrderConveration : Conversation
     {
@@ -19,5 +19,7 @@ namespace luval.bot
            
 
         }
+
+
     }
 }

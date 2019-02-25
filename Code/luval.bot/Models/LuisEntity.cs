@@ -17,5 +17,7 @@ namespace luval.bot.Models
         public int StartIndex { get; set; }
         [JsonProperty(PropertyName = "endIndex")]
         public int EndIndex { get; set; }
+        [JsonProperty(PropertyName = "resolution")]
+        public LuisEntityResolution Resolution { get; set; }
     }
 }

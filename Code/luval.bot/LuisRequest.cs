@@ -32,8 +32,8 @@ namespace luval.bot
             var client = new RestClient(new Uri(Session.Endpoint));
             var request = new RestRequest("apps/{appid}", Method.GET);
             request.AddUrlSegment("appid", Session.AppId);
-            request.AddParameter("staging", Session.IsStaging);
-            request.AddParameter("verbose", Session.IsVerbose);
+            request.AddParameter("staging", Convert.ToString(Session.IsStaging).ToLowerInvariant());
+            request.AddParameter("verbose", Convert.ToString(Session.IsVerbose).ToLowerInvariant());
             request.AddParameter("timezoneOffset", Session.TimeZoneOffset);
             request.AddParameter("subscription-key", Session.Key);
             request.AddParameter("q", query);

@@ -17,5 +17,10 @@ namespace luval.bot.Models
         public List<LuisIntent> Intents { get; set; }
         [JsonProperty(PropertyName = "entities")]
         public List<LuisEntity> Entities { get; set; }
+
+        public override string ToString()
+        {
+            return JsonConvert.SerializeObject(this);
+        }
     }
 }
